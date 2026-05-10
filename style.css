@@ -1,0 +1,85 @@
+/* 1. Importar fuente Inter de Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+/* 2. Variables CSS para un control rápido del tema */
+:root {
+  --bg-dark: #121212;
+  --bg-black: #0a0a0a;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --accent: #ffffff; /* Acento monocromático */
+  --transition-speed: 0.3s;
+}
+
+/* 3. Comportamiento base */
+html {
+  scroll-behavior: smooth; /* Navegación fluida entre secciones */
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-dark) !important;
+  color: var(--text-main);
+}
+
+/* 4. Utilidades de fondo */
+.bg-black {
+  background-color: var(--bg-black) !important;
+}
+
+/* 5. Tipografía minimalista */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.03em; /* Letras un poco más juntas para un look moderno */
+}
+
+p.lead {
+  color: var(--text-muted) !important;
+}
+
+/* 6. Animación de entrada general */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main section {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* 7. Micro-interacciones para Tarjetas (Skills, Proyectos, Certificados) */
+.bg-black.border {
+  transition:
+    transform var(--transition-speed) ease,
+    border-color var(--transition-speed) ease;
+}
+
+.bg-black.border:hover {
+  transform: translateY(-5px); /* Elevación suave */
+  border-color: var(--accent) !important; /* El borde brilla en blanco */
+}
+
+/* 8. Efectos para Iconos de Redes Sociales */
+.hover-opacity {
+  transition:
+    opacity var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
+  opacity: 0.6;
+  display: inline-block;
+}
+
+.hover-opacity:hover {
+  opacity: 1;
+  transform: scale(1.1); /* Ligero aumento de tamaño */
+}
