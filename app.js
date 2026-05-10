@@ -72,6 +72,7 @@ const portfolioData = {
     ],
     certificates: [
         { id: "44bb89a2-fc2d-46d4-b5a3-17f22c692b31" },
+        { id: "1c6b4d7e-5c6f-4f18-a5a6-279008cbcd32" },
         { id: "5d9422a5-dbc1-4659-985b-4f4f2e9d3346" },
         { id: "21f32ee9-0fed-4d6f-ac45-f7ff0f8a23e0" },
         { id: "86bbf5a5-4976-47f4-b29c-9617410fb4bb" },
