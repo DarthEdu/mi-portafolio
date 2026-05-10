@@ -1,4 +1,6 @@
-// 1. Datos del Portafolio
+// ═══════════════════════════════════════════════════════════════
+// 1. DATOS DEL PORTAFOLIO
+// ═══════════════════════════════════════════════════════════════
 const portfolioData = {
     skills: [
         {
@@ -8,7 +10,7 @@ const portfolioData = {
                 { name: "CSS3", icon: "fa-css3-alt" },
                 { name: "JavaScript", icon: "fa-js" },
                 { name: "React", icon: "fa-react" },
-                { name: "TypeScript", icon: "fa-js" }, // Using JS icon - TS doesn't have dedicated FA icon
+                { name: "TypeScript", icon: "fa-js" },
                 { name: "Bootstrap", icon: "fa-bootstrap" }
             ]
         },
@@ -42,33 +44,32 @@ const portfolioData = {
         }
     ],
     projects: [
-        { 
-            title: "ESFOTalk", 
-            description: "Aplicación móvil de red social para estudiantes (Tesis). Flutter + Appwrite.", 
-            repo: "https://github.com/DarthEdu/ESFOTalk" 
+        {
+            title: "ESFOTalk",
+            description: "Aplicación móvil de red social para estudiantes (Tesis). Flutter + Appwrite.",
+            repo: "https://github.com/DarthEdu/ESFOTalk"
         },
-        { 
-            title: "GarraDragon", 
-            description: "Backend API REST para gestión de aportaciones. Node.js + MongoDB + JWT.", 
-            repo: "https://github.com/DarthEdu/GarraDragon" 
+        {
+            title: "GarraDragon",
+            description: "Backend API REST para gestión de aportaciones. Node.js + MongoDB + JWT.",
+            repo: "https://github.com/DarthEdu/GarraDragon"
         },
-        { 
-            title: "EcoGenerator", 
-            description: "Sistema backend con autenticación JWT y API REST. Express + Node.js.", 
-            repo: "https://github.com/DarthEdu/EcoGenerator" 
+        {
+            title: "EcoGenerator",
+            description: "Sistema backend con autenticación JWT y API REST. Express + Node.js.",
+            repo: "https://github.com/DarthEdu/EcoGenerator"
         },
-        { 
-            title: "Frontend-VETGR3", 
-            description: "Frontend demo para sistema de veterinaria. React + CSS + HTML.", 
-            repo: "https://github.com/DarthEdu/Frontend-VETGR3" 
+        {
+            title: "Frontend-VETGR3",
+            description: "Frontend demo para sistema de veterinaria. React + CSS + HTML.",
+            repo: "https://github.com/DarthEdu/Frontend-VETGR3"
         },
-        { 
-            title: "My-Pokedex", 
-            description: "App móvil para consumir PokeAPI. Ionic + Firebase.", 
-            repo: "https://github.com/DarthEdu/My-Pokedex" 
+        {
+            title: "My-Pokedex",
+            description: "App móvil para consumir PokeAPI. Ionic + Firebase.",
+            repo: "https://github.com/DarthEdu/My-Pokedex"
         }
     ],
-    // Añadimos el array de certificados con el ID que me pasaste
     certificates: [
         { id: "44bb89a2-fc2d-46d4-b5a3-17f22c692b31" },
         { id: "5d9422a5-dbc1-4659-985b-4f4f2e9d3346" },
@@ -80,20 +81,22 @@ const portfolioData = {
     ]
 };
 
-// 2. Funciones de Renderizado
+// ═══════════════════════════════════════════════════════════════
+// 2. RENDERIZADO DE HABILIDADES (Skills)
+// ═══════════════════════════════════════════════════════════════
 function renderSkills() {
     const container = document.getElementById('skills-container');
     container.innerHTML = '';
 
     portfolioData.skills.forEach(skillCategory => {
         const categoryHTML = `
-            <div class="col-12 mb-4">
-                <h5 class="text-accent mb-3 border-bottom border-secondary pb-2">${skillCategory.category}</h5>
-                <div class="d-flex flex-wrap gap-3">
+            <div class="col-12 skills__category">
+                <h5 class="skills__category-title">${skillCategory.category}</h5>
+                <div class="skills__list">
                     ${skillCategory.items.map(skill => `
-                        <div class="bg-black border border-secondary rounded px-3 py-2 d-flex align-items-center gap-2">
-                            ${skill.icon ? `<i class="fab ${skill.icon} text-warning"></i>` : ''}
-                            <span>${skill.name}</span>
+                        <div class="skill-item">
+                            ${skill.icon ? `<i class="skill-item__icon fab ${skill.icon}"></i>` : ''}
+                            <span class="skill-item__name">${skill.name}</span>
                         </div>
                     `).join('')}
                 </div>
@@ -102,51 +105,52 @@ function renderSkills() {
         container.innerHTML += categoryHTML;
     });
 }
+
+// ═══════════════════════════════════════════════════════════════
+// 3. RENDERIZADO DE PROYECTOS (Projects)
+// ═══════════════════════════════════════════════════════════════
 function renderProjects() {
     const container = document.getElementById('proyectos-container');
     container.innerHTML = '';
 
     portfolioData.projects.forEach(project => {
         const projectHTML = `
-            <div class="col-12 col-md-6">
-                <div class="card bg-black border-secondary h-100">
-                    <div class="card-body">
-                        <h5 class="card-title text-accent">${project.title}</h5>
-                        <p class="card-text text-secondary">${project.description}</p>
-                        <a href="${project.repo}" target="_blank" class="btn btn-outline-accent btn-sm">
-                            <i class="fab fa-github me-2"></i>Ver en GitHub
-                        </a>
-                    </div>
+            <article class="project-card">
+                <div class="project-card__inner">
+                    <h3 class="project-card__title">${project.title}</h3>
+                    <p class="project-card__description">${project.description}</p>
+                    <a href="${project.repo}" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span>Ver en GitHub</span>
+                    </a>
                 </div>
-            </div>
+            </article>
         `;
         container.innerHTML += projectHTML;
     });
 }
 
-// 3. Renderizado de Certificados Credly
+// ═══════════════════════════════════════════════════════════════
+// 4. RENDERIZADO DE CERTIFICADOS (Credly)
+// ═══════════════════════════════════════════════════════════════
 function renderCertificates() {
     const container = document.getElementById('certificados-container');
-    container.innerHTML = ''; // Limpiamos el contenedor
+    container.innerHTML = '';
 
-    // Generamos los Divs para cada certificado
     portfolioData.certificates.forEach(cert => {
-        container.innerHTML += `
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                <div class="p-2 border border-secondary rounded bg-black shadow-sm">
-                    <!-- Div de Credly usando el ID dinámico -->
-                    <div data-iframe-width="150" 
-                         data-iframe-height="270" 
-                         data-share-badge-id="${cert.id}" 
-                         data-share-badge-host="https://www.credly.com">
-                    </div>
+        const certHTML = `
+            <div class="certificate">
+                <div data-iframe-width="150"
+                     data-iframe-height="270"
+                     data-share-badge-id="${cert.id}"
+                     data-share-badge-host="https://www.credly.com">
                 </div>
             </div>
         `;
+        container.innerHTML += certHTML;
     });
 
-    // Inyectamos el script de Credly dinámicamente DESPUÉS de crear los divs
-    // para asegurar que el script encuentre los elementos y genere los iframes.
+    // Inject Credly script dynamically
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.async = true;
@@ -154,7 +158,9 @@ function renderCertificates() {
     document.body.appendChild(script);
 }
 
-// 4. Theme Toggle
+// ═══════════════════════════════════════════════════════════════
+// 5. THEME TOGGLE (Modo Claro/Oscuro)
+// ═══════════════════════════════════════════════════════════════
 function initTheme() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
@@ -163,24 +169,22 @@ function initTheme() {
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
-    
+
     const toggleBtn = document.getElementById('theme-toggle');
-    const navbar = document.getElementById('main-navbar');
+    const header = document.getElementById('main-header');
     const footer = document.getElementById('contacto');
-    
+
     if (theme === 'light') {
         toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        toggleBtn.classList.replace('text-light', 'text-dark');
-        navbar.classList.remove('navbar-dark');
-        navbar.classList.add('navbar-light');
+        header.classList.remove('navbar-dark');
+        header.classList.add('navbar-light');
         footer.classList.remove('bg-black');
-        footer.classList.add('bg-light', 'text-dark');
+        footer.classList.add('bg-light');
     } else {
         toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        toggleBtn.classList.replace('text-dark', 'text-light');
-        navbar.classList.remove('navbar-light');
-        navbar.classList.add('navbar-dark');
-        footer.classList.remove('bg-light', 'text-dark');
+        header.classList.remove('navbar-light');
+        header.classList.add('navbar-dark');
+        footer.classList.remove('bg-light');
         footer.classList.add('bg-black');
     }
 }
@@ -193,7 +197,9 @@ function toggleTheme() {
 
 document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
-// 5. Inicializar
+// ═══════════════════════════════════════════════════════════════
+// 6. INICIALIZACIÓN
+// ═══════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     renderSkills();
