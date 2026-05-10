@@ -16,17 +16,17 @@ const portfolioData = {
             category: "Backend",
             items: [
                 { name: "Node.js", icon: "fa-node" },
-                { name: "Express", icon: "fa-server" },
-                { name: "MongoDB", icon: "fa-database" },
-                { name: "JWT", icon: "fa-shield-halved" },
-                { name: "Firebase", icon: "fa-fire" }
+                { name: "Express", icon: null },
+                { name: "MongoDB", icon: null },
+                { name: "JWT", icon: null },
+                { name: "Firebase", icon: null }
             ]
         },
         {
             category: "Desarrollo Móvil",
             items: [
-                { name: "Flutter", icon: "fa-mobile-screen" },
-                { name: "Ionic", icon: "fa-mobile" },
+                { name: "Flutter", icon: null },
+                { name: "Ionic", icon: null },
                 { name: "Kotlin", icon: "fa-android" }
             ]
         },
@@ -35,9 +35,9 @@ const portfolioData = {
             items: [
                 { name: "Java", icon: "fa-java" },
                 { name: "Python", icon: "fa-python" },
-                { name: "C++", icon: "fa-code" },
+                { name: "C++", icon: null },
                 { name: "Git", icon: "fa-github" },
-                { name: "Supabase", icon: "fa-layer-group" }
+                { name: "Supabase", icon: null }
             ]
         }
     ],
@@ -72,7 +72,7 @@ function renderSkills() {
                 <div class="d-flex flex-wrap gap-3">
                     ${skillCategory.items.map(skill => `
                         <div class="bg-black border border-secondary rounded px-3 py-2 d-flex align-items-center gap-2">
-                            <i class="fab ${skill.icon} text-warning"></i>
+                            ${skill.icon ? `<i class="fab ${skill.icon} text-warning"></i>` : ''}
                             <span>${skill.name}</span>
                         </div>
                     `).join('')}
