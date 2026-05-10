@@ -15,8 +15,13 @@ const portfolioData = {
     ],
     // Añadimos el array de certificados con el ID que me pasaste
     certificates: [
-        { id: "1c6b4d7e-5c6f-4f18-a5a6-279008cbcd32" }
-        // Si tienes más certificados, solo añade otro objeto aquí: { id: "OTRO_ID" }
+        { id: "44bb89a2-fc2d-46d4-b5a3-17f22c692b31" },
+        { id: "5d9422a5-dbc1-4659-985b-4f4f2e9d3346" },
+        { id: "21f32ee9-0fed-4d6f-ac45-f7ff0f8a23e0" },
+        { id: "86bbf5a5-4976-47f4-b29c-9617410fb4bb" },
+        { id: "ea214f91-4056-4374-9835-72dd9ce5830f" },
+        { id: "7df1957f-1e04-45e0-afeb-bc5af7d85646" },
+        { id: "9cb30c9c-f8f2-49ac-abb1-20878fc4d9e3" }
     ]
 };
 
