@@ -43,9 +43,29 @@ const portfolioData = {
     ],
     projects: [
         { 
-            title: "Proyecto 1", 
-            description: "Una aplicación web minimalista.", 
-            repo: "https://github.com/tu-usuario/proyecto1" 
+            title: "ESFOTalk", 
+            description: "Aplicación móvil de red social para estudiantes (Tesis). Flutter + Appwrite.", 
+            repo: "https://github.com/DarthEdu/ESFOTalk" 
+        },
+        { 
+            title: "GarraDragon", 
+            description: "Backend API REST para gestión de aportaciones. Node.js + MongoDB + JWT.", 
+            repo: "https://github.com/DarthEdu/GarraDragon" 
+        },
+        { 
+            title: "EcoGenerator", 
+            description: "Sistema backend con autenticación JWT y API REST. Express + Node.js.", 
+            repo: "https://github.com/DarthEdu/EcoGenerator" 
+        },
+        { 
+            title: "Frontend-VETGR3", 
+            description: "Frontend demo para sistema de veterinaria. React + CSS + HTML.", 
+            repo: "https://github.com/DarthEdu/Frontend-VETGR3" 
+        },
+        { 
+            title: "My-Pokedex", 
+            description: "App móvil para consumir PokeAPI. Ionic + Firebase.", 
+            repo: "https://github.com/DarthEdu/My-Pokedex" 
         }
     ],
     // Añadimos el array de certificados con el ID que me pasaste
@@ -82,7 +102,27 @@ function renderSkills() {
         container.innerHTML += categoryHTML;
     });
 }
-function renderProjects() { /* ... código anterior ... */ }
+function renderProjects() {
+    const container = document.getElementById('proyectos-container');
+    container.innerHTML = '';
+
+    portfolioData.projects.forEach(project => {
+        const projectHTML = `
+            <div class="col-12 col-md-6">
+                <div class="card bg-black border-secondary h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">${project.title}</h5>
+                        <p class="card-text text-secondary">${project.description}</p>
+                        <a href="${project.repo}" target="_blank" class="btn btn-outline-light btn-sm">
+                            <i class="fab fa-github me-2"></i>Ver en GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.innerHTML += projectHTML;
+    });
+}
 
 // 3. Renderizado de Certificados Credly
 function renderCertificates() {
