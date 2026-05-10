@@ -8,25 +8,25 @@ const portfolioData = {
                 { name: "CSS3", icon: "fa-css3-alt" },
                 { name: "JavaScript", icon: "fa-js" },
                 { name: "React", icon: "fa-react" },
-                { name: "TypeScript", icon: "fa-js" },
+                { name: "TypeScript", icon: "fa-js" }, // Using JS icon - TS doesn't have dedicated FA icon
                 { name: "Bootstrap", icon: "fa-bootstrap" }
             ]
         },
         {
             category: "Backend",
             items: [
-                { name: "Node.js", icon: "fa-node-js" },
+                { name: "Node.js", icon: "fa-node" },
                 { name: "Express", icon: "fa-server" },
                 { name: "MongoDB", icon: "fa-database" },
-                { name: "JWT", icon: "fa-lock" },
+                { name: "JWT", icon: "fa-shield-halved" },
                 { name: "Firebase", icon: "fa-fire" }
             ]
         },
         {
             category: "Desarrollo Móvil",
             items: [
-                { name: "Flutter", icon: "fa-mobile-alt" },
-                { name: "Ionic", icon: "fa-ion" },
+                { name: "Flutter", icon: "fa-mobile-screen" },
+                { name: "Ionic", icon: "fa-mobile" },
                 { name: "Kotlin", icon: "fa-android" }
             ]
         },
@@ -36,8 +36,8 @@ const portfolioData = {
                 { name: "Java", icon: "fa-java" },
                 { name: "Python", icon: "fa-python" },
                 { name: "C++", icon: "fa-code" },
-                { name: "Git", icon: "fa-git-alt" },
-                { name: "Supabase", icon: "fa-database" }
+                { name: "Git", icon: "fa-github" },
+                { name: "Supabase", icon: "fa-layer-group" }
             ]
         }
     ],
