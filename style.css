@@ -7,8 +7,19 @@
   --bg-black: #0a0a0a;
   --text-main: #ffffff;
   --text-muted: #a0a0a0;
-  --accent: #ffffff; /* Acento monocromático */
+  --accent: #ffffff;
+  --border-color: #333333;
   --transition-speed: 0.3s;
+}
+
+/* Tema claro */
+[data-theme="light"] {
+  --bg-dark: #f8f9fa;
+  --bg-black: #ffffff;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --accent: #0d6efd;
+  --border-color: #dee2e6;
 }
 
 /* 3. Comportamiento base */
@@ -18,13 +29,20 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: var(--bg-dark) !important;
+  background-color: var(--bg-dark);
   color: var(--text-main);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* 4. Utilidades de fondo */
 .bg-black {
-  background-color: var(--bg-black) !important;
+  background-color: var(--bg-black);
+  transition: background-color 0.3s;
+}
+
+/* 4.1 Borders */
+.border-secondary {
+  border-color: var(--border-color) !important;
 }
 
 /* 5. Tipografía minimalista */
@@ -82,4 +100,53 @@ main section {
 .hover-opacity:hover {
   opacity: 1;
   transform: scale(1.1); /* Ligero aumento de tamaño */
+}
+
+/* 9. Theme Toggle Button */
+#theme-toggle {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar themes */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Footer light mode */
+.bg-light.footer-light {
+  background-color: #e9ecef !important;
+  color: #212529;
+}
+
+/* Text utilities */
+.text-secondary {
+  color: var(--text-muted) !important;
+}
+
+.text-light {
+  color: var(--text-main) !important;
+}
+
+/* Links in footer */
+#contacto a {
+  color: var(--text-main);
+  transition: color 0.3s;
+}
+
+#contacto a:hover {
+  color: var(--accent);
 }

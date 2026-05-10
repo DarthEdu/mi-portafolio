@@ -154,9 +154,49 @@ function renderCertificates() {
     document.body.appendChild(script);
 }
 
-// 4. Inicializar
+// 4. Theme Toggle
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    
+    const toggleBtn = document.getElementById('theme-toggle');
+    const navbar = document.getElementById('main-navbar');
+    const footer = document.getElementById('contacto');
+    
+    if (theme === 'light') {
+        toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        toggleBtn.classList.replace('text-light', 'text-dark');
+        navbar.classList.remove('navbar-dark');
+        navbar.classList.add('navbar-light');
+        footer.classList.remove('bg-black');
+        footer.classList.add('bg-light', 'text-dark');
+    } else {
+        toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        toggleBtn.classList.replace('text-dark', 'text-light');
+        navbar.classList.remove('navbar-light');
+        navbar.classList.add('navbar-dark');
+        footer.classList.remove('bg-light', 'text-dark');
+        footer.classList.add('bg-black');
+    }
+}
+
+function toggleTheme() {
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+}
+
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+// 5. Inicializar
 document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
     renderSkills();
     renderProjects();
-    renderCertificates(); // Llamamos a la nueva función
+    renderCertificates();
 });
