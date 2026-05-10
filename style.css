@@ -7,7 +7,8 @@
   --bg-black: #0a0a0a;
   --text-main: #ffffff;
   --text-muted: #a0a0a0;
-  --accent: #ffffff;
+  --accent: #17a2b8;
+  --title-color: #17a2b8;
   --border-color: #333333;
   --transition-speed: 0.3s;
 }
@@ -19,6 +20,7 @@
   --text-main: #212529;
   --text-muted: #6c757d;
   --accent: #0d6efd;
+  --title-color: #0d6efd;
   --border-color: #dee2e6;
 }
 
@@ -85,7 +87,7 @@ main section {
 
 .bg-black.border:hover {
   transform: translateY(-5px); /* Elevación suave */
-  border-color: var(--accent) !important; /* El borde brilla en blanco */
+  border-color: var(--title-color) !important; /* El borde brilla con color de acento */
 }
 
 /* 8. Efectos para Iconos de Redes Sociales */
@@ -149,4 +151,34 @@ main section {
 
 #contacto a:hover {
   color: var(--accent);
+}
+
+/* Custom accent classes */
+.text-accent {
+  color: var(--title-color) !important;
+}
+
+.btn-outline-accent {
+  border-color: var(--title-color);
+  color: var(--title-color);
+  background: transparent;
+}
+
+.btn-outline-accent:hover {
+  background-color: var(--title-color);
+  color: var(--bg-dark);
+}
+
+/* Card in light mode */
+[data-theme="light"] .card {
+  border-color: var(--border-color);
+}
+
+[data-theme="light"] .card-title {
+  color: var(--title-color);
+}
+
+/* h2 titles */
+h2 {
+  color: var(--text-main);
 }

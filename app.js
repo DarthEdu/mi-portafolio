@@ -88,7 +88,7 @@ function renderSkills() {
     portfolioData.skills.forEach(skillCategory => {
         const categoryHTML = `
             <div class="col-12 mb-4">
-                <h5 class="text-info mb-3 border-bottom border-secondary pb-2">${skillCategory.category}</h5>
+                <h5 class="text-accent mb-3 border-bottom border-secondary pb-2">${skillCategory.category}</h5>
                 <div class="d-flex flex-wrap gap-3">
                     ${skillCategory.items.map(skill => `
                         <div class="bg-black border border-secondary rounded px-3 py-2 d-flex align-items-center gap-2">
@@ -111,9 +111,9 @@ function renderProjects() {
             <div class="col-12 col-md-6">
                 <div class="card bg-black border-secondary h-100">
                     <div class="card-body">
-                        <h5 class="card-title text-info">${project.title}</h5>
+                        <h5 class="card-title text-accent">${project.title}</h5>
                         <p class="card-text text-secondary">${project.description}</p>
-                        <a href="${project.repo}" target="_blank" class="btn btn-outline-light btn-sm">
+                        <a href="${project.repo}" target="_blank" class="btn btn-outline-accent btn-sm">
                             <i class="fab fa-github me-2"></i>Ver en GitHub
                         </a>
                     </div>
