@@ -286,17 +286,22 @@ p {
 }
 
 .hero__avatar {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--color-border);
-  box-shadow: var(--shadow-lg);
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
 }
 
-[data-theme="light"] .hero__avatar {
+.hero__avatar:hover {
   border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="light"] .hero__avatar {
+  border-color: var(--color-border);
 }
 
 /* Responsive */
@@ -307,8 +312,7 @@ p {
   }
 
   .hero__avatar {
-    width: 140px;
-    height: 140px;
+    max-width: 160px;
   }
 
   .hero__subtitle {
@@ -318,8 +322,7 @@ p {
 
 @media (max-width: 575.98px) {
   .hero__avatar {
-    width: 120px;
-    height: 120px;
+    max-width: 140px;
   }
 
   .hero__title {
