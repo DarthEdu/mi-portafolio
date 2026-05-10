@@ -34,7 +34,7 @@ portafolio/
 
 ## Ver en vivo
 
-🔗 [https://darthedu.github.io/](https://darthedu.github.io/)
+🔗 [https://darthedu.github.io/](https://darthedu.github.io/mi-portafolio/)
 
 ## Contacto
 
