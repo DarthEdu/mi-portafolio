@@ -1,10 +1,45 @@
 // 1. Datos del Portafolio
 const portfolioData = {
     skills: [
-        { name: "HTML5", icon: "fa-html5" },
-        { name: "CSS3", icon: "fa-css3-alt" },
-        { name: "JavaScript", icon: "fa-js" },
-        { name: "Bootstrap", icon: "fa-bootstrap" }
+        {
+            category: "Frontend",
+            items: [
+                { name: "HTML5", icon: "fa-html5" },
+                { name: "CSS3", icon: "fa-css3-alt" },
+                { name: "JavaScript", icon: "fa-js" },
+                { name: "React", icon: "fa-react" },
+                { name: "TypeScript", icon: "fa-js" },
+                { name: "Bootstrap", icon: "fa-bootstrap" }
+            ]
+        },
+        {
+            category: "Backend",
+            items: [
+                { name: "Node.js", icon: "fa-node-js" },
+                { name: "Express", icon: "fa-server" },
+                { name: "MongoDB", icon: "fa-database" },
+                { name: "JWT", icon: "fa-lock" },
+                { name: "Firebase", icon: "fa-fire" }
+            ]
+        },
+        {
+            category: "Desarrollo Móvil",
+            items: [
+                { name: "Flutter", icon: "fa-mobile-alt" },
+                { name: "Ionic", icon: "fa-ion" },
+                { name: "Kotlin", icon: "fa-android" }
+            ]
+        },
+        {
+            category: "Otros",
+            items: [
+                { name: "Java", icon: "fa-java" },
+                { name: "Python", icon: "fa-python" },
+                { name: "C++", icon: "fa-code" },
+                { name: "Git", icon: "fa-git-alt" },
+                { name: "Supabase", icon: "fa-database" }
+            ]
+        }
     ],
     projects: [
         { 
@@ -25,8 +60,28 @@ const portfolioData = {
     ]
 };
 
-// 2. Funciones de Renderizado (skills y proyectos se mantienen igual)
-function renderSkills() { /* ... código anterior ... */ }
+// 2. Funciones de Renderizado
+function renderSkills() {
+    const container = document.getElementById('skills-container');
+    container.innerHTML = '';
+
+    portfolioData.skills.forEach(skillCategory => {
+        const categoryHTML = `
+            <div class="col-12 mb-4">
+                <h5 class="text-info mb-3 border-bottom border-secondary pb-2">${skillCategory.category}</h5>
+                <div class="d-flex flex-wrap gap-3">
+                    ${skillCategory.items.map(skill => `
+                        <div class="bg-black border border-secondary rounded px-3 py-2 d-flex align-items-center gap-2">
+                            <i class="fab ${skill.icon} text-warning"></i>
+                            <span>${skill.name}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+        container.innerHTML += categoryHTML;
+    });
+}
 function renderProjects() { /* ... código anterior ... */ }
 
 // 3. Renderizado de Certificados Credly
