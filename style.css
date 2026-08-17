@@ -68,6 +68,7 @@ button {
   --font-weight-bold: 700;
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
   --letter-spacing-tight: -0.03em;
 
   /* ─── Spacing (múltiplos de 8px) ─── */
@@ -94,6 +95,9 @@ button {
   --border-radius-lg: 0.75rem;
   --border-radius-xl: 1rem;
   --border-radius-card: 0.75rem;
+
+  /* ─── Skill Icon ─── */
+  --color-skill-icon: #ffc107;
 }
 
 /* Theme Light */
@@ -413,7 +417,7 @@ p {
 
 .skill-item__icon {
   font-size: var(--font-size-lg);
-  color: #ffc107;
+  color: var(--color-skill-icon);
   display: flex;
   align-items: center;
 }

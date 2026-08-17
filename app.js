@@ -11,7 +11,8 @@ const portfolioData = {
                 { name: "JavaScript", icon: "fa-js" },
                 { name: "React", icon: "fa-react" },
                 { name: "TypeScript", icon: "fa-js" },
-                { name: "Bootstrap", icon: "fa-bootstrap" }
+                { name: "Bootstrap", icon: "fa-bootstrap" },
+                { name: "Next.JS", icon: null }
             ]
         },
         {
@@ -21,7 +22,9 @@ const portfolioData = {
                 { name: "Express", icon: null },
                 { name: "MongoDB", icon: null },
                 { name: "JWT", icon: null },
-                { name: "Firebase", icon: null }
+                { name: "Firebase", icon: null },
+                { name: "Python", icon: "fa-python" },
+                { name: "Prisma", icon: null }
             ]
         },
         {
@@ -33,20 +36,36 @@ const portfolioData = {
             ]
         },
         {
-            category: "Otros",
+            category: "Infraestructura y Redes",
             items: [
-                { name: "Java", icon: "fa-java" },
-                { name: "Python", icon: "fa-python" },
-                { name: "C++", icon: null },
+                { name: "GLPI", icon: null },
+                { name: "GrandStream Firewall", icon: null },
+                { name: "VLAN", icon: null },
+                { name: "AnyDesk", icon: null },
+                { name: "RustDesk", icon: null }
+            ]
+        },
+        {
+            category: "Integraciones / APIs",
+            items: [
+                { name: "Meta Developer Tools", icon: null },
+                { name: "WhatsApp API", icon: null },
+                { name: "Chatbot", icon: null }
+            ]
+        },
+        {
+            category: "Herramientas",
+            items: [
                 { name: "Git", icon: "fa-github" },
-                { name: "Supabase", icon: null }
+                { name: "Supabase", icon: null },
+                { name: "Windows 10/11", icon: null }
             ]
         }
     ],
     projects: [
         {
             title: "ESFOTalk",
-            description: "Aplicación móvil de red social para estudiantes (Tesis). Flutter + Appwrite.",
+            description: "Aplicación móvil de red social para estudiantes. Flutter + Appwrite.",
             repo: "https://github.com/DarthEdu/ESFOTalk"
         },
         {
@@ -55,9 +74,14 @@ const portfolioData = {
             repo: "https://github.com/DarthEdu/GarraDragon"
         },
         {
-            title: "EcoGenerator",
-            description: "Sistema backend con autenticación JWT y API REST. Express + Node.js.",
-            repo: "https://github.com/DarthEdu/EcoGenerator"
+            title: "TopoTrackApp",
+            description: "App móvil para generar formas geométricas con ubicación en tiempo real con otros usuarios.",
+            repo: "https://github.com/DarthEdu/TopoTrackApp"
+        },
+        {
+            title: "Backend-VETGR3",
+            description: "Backend de práctica desarrollado como proyecto durante estudios.",
+            repo: "https://github.com/DarthEdu/Backend-VETGR3"
         },
         {
             title: "Frontend-VETGR3",
@@ -65,9 +89,9 @@ const portfolioData = {
             repo: "https://github.com/DarthEdu/Frontend-VETGR3"
         },
         {
-            title: "My-Pokedex",
-            description: "App móvil para consumir PokeAPI. Ionic + Firebase.",
-            repo: "https://github.com/DarthEdu/My-Pokedex"
+            title: "Buho-Turismo",
+            description: "App móvil tipo red social para marcar sitios y dar información con coordenadas en tiempo real.",
+            repo: "https://github.com/DarthEdu/Buho-Turismo"
         }
     ],
     certificates: [
